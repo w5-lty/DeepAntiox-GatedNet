@@ -7,31 +7,31 @@ The AnOxPePred dataset was curated in 2020 from the BIOPEP‑UWM database, conta
 After merging three sources, we filtered sequences with non‑standard amino acids and restricted peptide length within 2‑30 residues. CD‑HIT was utilized for redundancy removal under 90 % sequence identity threshold. The consolidated non‑redundant dataset contains 3379 peptide entries for nested cross‑validation. An independent literature‑sourced external test set containing 37 experimentally validated positive AOPs was used for additional generalization assessment.
 
   - Raw merged dataset: `/data/raw/`
-- Processed non‑redundant dataset (CD‑HIT 90%): `/data/processed/`
-- Cluster‑based partition files for P60/P70/P80/P90 cross‑validation are provided in `/data/cluster_split/`
-- Script for three‑stage feature selection (F‑test, Pearson filtering, SFS): `/feature_engineer/feature_selection.py`
-- Script to reproduce machine‑learning baseline comparison: `/reproduce/ml_baseline/aop_ml_compare.py`
-- Script to reproduce deep‑learning baseline comparison & ablation study: `/reproduce/dl_baseline/ablation_run.py`
-- Script for full nested‑cross‑validation training of DeepAntiox‑GatedNet: `/final_model/deepantiox_gatednet_train.py`
+  - Processed non‑redundant dataset (CD‑HIT 90%): `/data/processed/`
+  - Cluster‑based partition files for P60/P70/P80/P90 cross‑validation are provided in `/data/cluster_split/`
+  - Script for three‑stage feature selection (F‑test, Pearson filtering, SFS): `/feature_engineer/feature_selection.py`
+  - Script to reproduce machine‑learning baseline comparison: `/reproduce/ml_baseline/aop_ml_compare.py`
+  - Script to reproduce deep‑learning baseline comparison & ablation study: `/reproduce/dl_baseline/ablation_run.py`
+  - Script for full nested‑cross‑validation training of DeepAntiox‑GatedNet: `/final_model/deepantiox_gatednet_train.py`
 
   # Getting Started
 
   # Python packages
   - python==3.10
-- tensorflow==2.15.0
-- pyqt5==5.15.10
-- shap==0.44.0
-- scikit‑learn==1.3.2
-- pandas==2.1.4
-- numpy==1.26.2
-- cd‑hit (external tool, add to system PATH)
+  - tensorflow==2.15.0
+  - pyqt5==5.15.10
+  - shap==0.44.0
+  - scikit‑learn==1.3.2
+  - pandas==2.1.4
+  - numpy==1.26.2
+  - cd‑hit (external tool, add to system PATH)
 
   # Executing program
   - run `/reproduce/dl_baseline/ablation_run.py` to reproduce ablation experiment results
-- run `/reproduce/ml_baseline/aop_ml_compare.py` to reproduce traditional machine‑learning baseline results
-- run `/final_model/deepantiox_gatednet_train.py` to train DeepAntiox‑GatedNet under cluster‑based nested 5‑fold cross‑validation
-- run `/interpretability/shap_analysis.py` to perform SHAP interpretability analysis
-- run `/gui/run_gui.py` to launch PyQt5 graphical prediction platform for single/batch peptide prediction
+  - run `/reproduce/ml_baseline/aop_ml_compare.py` to reproduce traditional machine‑learning baseline results
+  - run `/final_model/deepantiox_gatednet_train.py` to train DeepAntiox‑GatedNet under cluster‑based nested 5‑fold cross‑validation
+  - run `/interpretability/shap_analysis.py` to perform SHAP interpretability analysis
+  - run `/gui/run_gui.py` to launch PyQt5 graphical prediction platform for single/batch peptide prediction
 
   # Acknowledgments
   We thank the authors of AnOxPePred, AnOxPP and AOPP for sharing their public datasets. We also acknowledge open‑source resources including CD‑HIT, SHAP and TensorFlow.
